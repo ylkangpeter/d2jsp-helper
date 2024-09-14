@@ -40,6 +40,10 @@
 
         // 遍历每一行
         rows.forEach(row => {
+            const td1 = row.querySelector("td:nth-child(2)");
+            if(td1){
+                td1.style.fontSize='130%'
+            }
             // 获取第3列和第5列的<a>标签
             const td3 = row.querySelector("td:nth-child(3) a");
             const td5 = row.querySelector("td:nth-child(5) a");
@@ -74,6 +78,8 @@
         var textarea = document.createElement('textarea');
         textarea.style.width = '100%';
         textarea.style.resize = 'none';
+        textarea.style.fontSize = '140%';
+
         textarea.style.height = (dl.offsetHeight - 30) + 'px';  // 留出按钮的位置
         textarea.value = savedText;  // 设置 textarea 的初始值
 
