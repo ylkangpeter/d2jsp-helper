@@ -23,15 +23,35 @@
             if (lines.some(line => a.textContent.toLowerCase().includes(line.toLowerCase()))) {
                 a.style.color = 'blue';
                 a.style.fontSize = '190%';
-                a.style.fontWeight = 'normal !important';
+                a.style.fontWeight = 'normal';
                 if(a.querySelector('b'))
-                    a.querySelector('b').fontWeight = 'normal !important';
+                    a.querySelector('b').fontWeight = 'normal';
             } else {
                 a.style.color = 'black'; // 恢复默认颜色
-                a.style.fontWeight = 'normal !important';
+                a.style.fontWeight = 'normal';
                 if(a.querySelector('b'))
-                    a.querySelector('b').fontWeight = 'normal !important';
+                    a.querySelector('b').fontWeight = 'normal';
                 a.style.fontSize = ''; // 恢复默认字体大小
+            }
+        });
+
+        // 获取所有的行
+        const rows = document.querySelectorAll("body > dl > dd > table > tbody > tr");
+
+        // 遍历每一行
+        rows.forEach(row => {
+            // 获取第3列和第5列的<a>标签
+            const td3 = row.querySelector("td:nth-child(3) a");
+            const td5 = row.querySelector("td:nth-child(5) a");
+
+            // 如果两个<a>标签都存在
+            if (td3 && td5) {
+                // 比较它们的文字内容
+                if (td3.textContent !== td5.textContent) {
+                    // 如果不相同，将第5列的文字颜色改为红色
+                    td5.style.color = "red";
+                    td5.style.fontWeight = "bold";
+                }
             }
         });
     }
