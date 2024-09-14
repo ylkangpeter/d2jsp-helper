@@ -22,10 +22,10 @@
         document.querySelectorAll('tbody a').forEach(function(a) {
             if (lines.some(line => a.textContent.toLowerCase().includes(line.toLowerCase()))) {
                 a.style.color = 'blue';
-                a.style.fontSize = '190%';
-                a.style.fontWeight = 'normal';
+                a.style.fontSize = '130%';
+                a.style.fontWeight = 'bold';
                 if(a.querySelector('b'))
-                    a.querySelector('b').fontWeight = 'normal';
+                    a.querySelector('b').fontWeight = 'bold';
             } else {
                 a.style.color = 'black'; // 恢复默认颜色
                 a.style.fontWeight = 'normal';
